@@ -14,18 +14,20 @@ for you, ready to run.
 
 ## Get started in three steps
 
-1. **Install the plugin** (add this repo as a plugin, or open the folder in an IDE
-   with Claude Code).
+1. **Download this repo and open the folder** in your IDE with Claude Code. That's
+   the whole install — the repo ships its own `.claude/commands/`, so `/superteam`
+   is available the moment the folder is open. (No marketplace step; it also works
+   as an installable plugin if you prefer.)
 2. **Run `/superteam`.** Claude interviews you — your goal, what "done" means, what
    it may and may not do on its own — and then scaffolds and *freezes* a complete
-   campaign: a registry, a filled-in charter, the coordination tree, and an initial
-   set of tasks with locked acceptance criteria. Nothing needs to exist beforehand;
-   this creates it.
+   campaign right there in the folder: a registry, a filled-in charter, the
+   coordination tree, and an initial set of tasks with locked acceptance criteria.
+   Nothing needs to exist beforehand; this creates it.
 3. **Run `/superteam-run`.** Claude takes the Orchestrator role and starts working.
    Check in any time with `/superteam-status`; drop a steering note whenever you
    want and it's picked up at the next wave boundary.
 
-That's the whole loop: **download → `/superteam` → answer questions → `/superteam-run`.**
+That's the whole loop: **download → open → `/superteam` → answer questions → `/superteam-run`.**
 
 ## Why it can be trusted to run unattended
 
