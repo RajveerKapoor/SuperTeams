@@ -2,7 +2,7 @@
 
 A generalized, self-hardening system for running **autonomous agent campaigns**:
 point it at a goal (or run it as a persistent team) and it operates toward that
-goal for days to weeks, unattended, across many Claude Code sessions, on a single
+goal for days to **months**, unattended, across many Claude Code sessions, on a single
 machine, under subscription rate limits — pausing at limits, recovering from
 interruptions, and interrupting a human only when the human's judgment is
 genuinely required.
