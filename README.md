@@ -7,6 +7,8 @@ machine, under subscription rate limits — pausing at limits, recovering from
 interruptions, and interrupting a human only when the human's judgment is
 genuinely required.
 
+<img width="1264" height="898" alt="Screenshot 2026-08-15 at 4 57 54 PM" src="https://github.com/user-attachments/assets/c438a183-1e80-4cf5-b6cb-05ed08f03052" />
+
 It is grounded empirically in a real ~7-week autonomous campaign: every failure,
 misdiagnosis, interruption, and workaround that campaign hit is encoded here as
 *structure* — a schema field, a state transition, a gate, a role boundary — so the
