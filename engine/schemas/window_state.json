@@ -1,0 +1,27 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "WINDOW_STATE.json — the rate-limit tracker",
+  "description": "The babysit loop owns this file. doctrine/07 section 1.",
+  "type": "object",
+  "required": ["window_started_at", "window_length_h", "weekly_used_frac"],
+  "properties": {
+    "window_started_at": {"type": "string"},
+    "window_length_h": {"type": "number"},
+    "window_budget_remaining_frac": {"type": ["number", "null"]},
+    "weekly_cap_reset_at": {"type": ["string", "null"]},
+    "weekly_used_frac": {"type": "number"},
+    "weekly_park_ceiling": {"type": "number"},
+    "cadence_cron": {"type": ["string", "null"]},
+    "last_tick_at": {"type": ["string", "null"]},
+    "park_state": {
+      "type": ["object", "null"],
+      "properties": {
+        "reason": {"type": "string"},
+        "parked_at": {"type": "string"},
+        "resume_condition": {"type": "string"},
+        "frontier": {"type": "array", "items": {"type": "string"}},
+        "in_flight_wave": {"type": ["string", "null"]}
+      }
+    }
+  }
+}

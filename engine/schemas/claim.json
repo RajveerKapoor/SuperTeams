@@ -1,0 +1,26 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "SuperTeam claim entry",
+  "description": "A load-bearing assertion the cold Auditor must re-derive. doctrine/04 section 2.",
+  "type": "object",
+  "required": ["id", "type", "statement", "source_task", "load_bearing", "audit_state", "version"],
+  "properties": {
+    "id": {"type": "string", "pattern": "^CLAIM_[0-9]{4,}$"},
+    "type": {"type": "string", "enum": ["claim"]},
+    "statement": {"type": "string"},
+    "source_task": {"type": "string"},
+    "load_bearing": {"type": "boolean"},
+    "evidence": {"type": "array", "items": {"type": "string"}},
+    "rederive": {"type": ["string", "null"]},
+    "audit_state": {
+      "type": "string",
+      "enum": ["UNAUDITED", "PASS", "FAIL", "PASS_WITH_NOTES"]
+    },
+    "audited_by": {"type": ["string", "null"]},
+    "audited_at": {"type": ["string", "null"]},
+    "audit_note": {"type": ["string", "null"]},
+    "conflict": {"type": "boolean"},
+    "conflict_note": {"type": ["string", "null"]},
+    "version": {"type": "integer"}
+  }
+}

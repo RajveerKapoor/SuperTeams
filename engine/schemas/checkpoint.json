@@ -1,0 +1,18 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "WAVE_<id>_CHECKPOINT — the resumability contract",
+  "description": "Overwritten after EVERY task banks, never batched, so a fresh Wave General resumes from exactly the last banked task. doctrine/07 section 3.",
+  "type": "object",
+  "required": ["wave_id", "completed", "pending", "last_checkpoint_at", "reconcile_rule"],
+  "properties": {
+    "wave_id": {"type": "string"},
+    "completed": {"type": "array", "items": {"type": "string"}},
+    "in_progress": {"type": ["string", "null"]},
+    "pending": {"type": "array", "items": {"type": "string"}},
+    "deferred": {"type": "array"},
+    "artifacts_baseline": {"type": ["integer", "null"]},
+    "artifacts_at_checkpoint": {"type": ["integer", "null"]},
+    "last_checkpoint_at": {"type": "string"},
+    "reconcile_rule": {"type": "string"}
+  }
+}

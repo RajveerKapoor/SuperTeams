@@ -1,0 +1,45 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "artifacts.jsonl line — the Curiosity Protocol pool",
+  "description": "Record ALL, never pre-gate. promotion_status is NOT a pre-judgment: use provenance for that. doctrine/08 section 4.",
+  "type": "object",
+  "required": ["artifact_id", "kind", "source_task", "provenance", "promotion_status", "ts_iso"],
+  "properties": {
+    "artifact_id": {"type": "string"},
+    "value": {},
+    "kind": {
+      "type": "string",
+      "enum": [
+        "measurement",
+        "relationship",
+        "null-result",
+        "anomaly",
+        "regression",
+        "smell",
+        "scaling",
+        "infeasibility",
+        "novel-form",
+        "artifact"
+      ]
+    },
+    "context": {"type": ["string", "null"]},
+    "source_task": {"type": "string"},
+    "source_wave": {"type": ["string", "null"]},
+    "lens": {"type": ["string", "null"]},
+    "provenance": {
+      "type": "string",
+      "enum": ["real", "derived", "synthetic", "canary", "textbook"]
+    },
+    "promotion_status": {
+      "type": "string",
+      "enum": ["LOGGED", "FLAGGED", "PROMOTED", "REJECTED"]
+    },
+    "candidate_note": {"type": ["string", "null"]},
+    "p_value": {"type": ["number", "null"]},
+    "fdr_q": {"type": ["number", "null"]},
+    "reverify_recipe": {"type": ["string", "null"]},
+    "path": {"type": ["string", "null"]},
+    "sha256": {"type": ["string", "null"]},
+    "ts_iso": {"type": "string"}
+  }
+}

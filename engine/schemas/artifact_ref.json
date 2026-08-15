@@ -1,0 +1,18 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "SuperTeam artifact reference",
+  "description": "A pointer to a persisted, hashed output. The bytes live on disk; the registry holds the reference. doctrine/04 section 2.",
+  "type": "object",
+  "required": ["id", "type", "path", "sha256", "produced_by", "version"],
+  "properties": {
+    "id": {"type": "string", "pattern": "^ART_[0-9]{4,}$"},
+    "type": {"type": "string", "enum": ["artifact_ref"]},
+    "path": {"type": "string"},
+    "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "bytes": {"type": ["integer", "null"]},
+    "manifest": {"type": ["string", "null"]},
+    "produced_by": {"type": "string"},
+    "logged_at": {"type": ["string", "null"]},
+    "version": {"type": "integer"}
+  }
+}

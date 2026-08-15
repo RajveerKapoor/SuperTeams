@@ -1,0 +1,19 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "SuperTeam authorization entry",
+  "description": "A human word, written to disk BEFORE the system acts on it. Law 9. doctrine/04 section 2.",
+  "type": "object",
+  "required": ["id", "type", "granted_by", "grants", "scope", "granted_at", "channel", "version"],
+  "properties": {
+    "id": {"type": "string", "pattern": "^AUTHZ_[0-9]{4,}$"},
+    "type": {"type": "string", "enum": ["authorization"]},
+    "granted_by": {"type": "string"},
+    "grants": {"type": "string"},
+    "scope": {"type": "string"},
+    "granted_at": {"type": "string"},
+    "channel": {"type": "string"},
+    "expires_at": {"type": ["string", "null"]},
+    "revoked": {"type": "boolean"},
+    "version": {"type": "integer"}
+  }
+}

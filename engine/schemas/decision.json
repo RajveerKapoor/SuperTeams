@@ -1,0 +1,32 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "SuperTeam decision entry",
+  "description": "Every non-mechanical Orchestrator choice, with its rationale. doctrine/04 section 2.",
+  "type": "object",
+  "required": ["id", "type", "decision", "rationale", "decided_at", "version"],
+  "properties": {
+    "id": {"type": "string", "pattern": "^DEC_[0-9]{4,}$"},
+    "type": {"type": "string", "enum": ["decision"]},
+    "decision": {"type": "string"},
+    "rationale": {"type": "string"},
+    "kind": {
+      "type": ["string", "null"],
+      "enum": [
+        null,
+        "replan-methodology",
+        "replan-invalidation",
+        "wave-ordering",
+        "escalation",
+        "unfreeze",
+        "scope-change",
+        "policy",
+        "other"
+      ]
+    },
+    "touches": {"type": "array", "items": {"type": "string"}},
+    "cites_authz": {"type": ["string", "null"]},
+    "decided_by": {"type": ["string", "null"]},
+    "decided_at": {"type": "string"},
+    "version": {"type": "integer"}
+  }
+}

@@ -1,0 +1,20 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.venv/
+venv/
+
+# macOS
+.DS_Store
+
+# Mission-runtime artifacts (created when the engine is run in-tree)
+REGISTRY.lock
+.*.tmp.*
+handoffs/orchestrator/logs/
+
+# Editor / local
+.vscode/
+.idea/
+*.swp

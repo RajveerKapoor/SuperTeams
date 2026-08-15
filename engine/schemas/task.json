@@ -1,0 +1,75 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "SuperTeam task entry",
+  "description": "A node in the mission DAG. See doctrine/04_REGISTRY_AND_DISPATCH.md section 2.",
+  "type": "object",
+  "required": ["id", "type", "title", "status", "dependencies", "pre_registered", "version"],
+  "properties": {
+    "id": {"type": "string", "pattern": "^(TASK|DISC|GAP)_[0-9]{4,}$"},
+    "type": {"type": "string", "enum": ["task"]},
+    "title": {"type": "string"},
+    "wave": {"type": ["string", "null"]},
+    "status": {
+      "type": "string",
+      "enum": ["BLOCKED_ON_DEPS", "PENDING", "IN_PROGRESS", "COMPLETED", "SUPERSEDED"]
+    },
+    "verdict": {
+      "type": ["string", "null"],
+      "enum": [
+        null,
+        "DONE",
+        "FAILED",
+        "STUMPED",
+        "DEFERRED-COMPUTE-RUNNING",
+        "REVISED",
+        "TRIVIAL",
+        "DEFINITION-DEPENDENT",
+        "META-QUESTION"
+      ]
+    },
+    "verdict_value": {},
+    "verdict_ci_95": {},
+    "dependencies": {"type": "array", "items": {"type": "string"}},
+    "pre_registered": {
+      "type": "object",
+      "required": [
+        "falsification_criterion",
+        "acceptance_check",
+        "required_precision_se",
+        "stumped_ci_width",
+        "target_n"
+      ],
+      "properties": {
+        "falsification_criterion": {"type": ["string", "null"]},
+        "acceptance_check": {"type": ["string", "null"]},
+        "required_precision_se": {"type": ["string", "number", "null"]},
+        "stumped_ci_width": {"type": ["string", "number", "null"]},
+        "target_n": {"type": ["integer", "null"]}
+      }
+    },
+    "frozen": {"type": "boolean"},
+    "frozen_at": {"type": ["string", "null"]},
+    "model_hint": {"type": ["string", "null"]},
+    "lens": {"type": ["string", "null"]},
+    "agent_id": {"type": ["string", "null"]},
+    "agent_type": {"type": ["string", "null"]},
+    "estimate_h": {"type": ["number", "null"]},
+    "started_at": {"type": ["string", "null"]},
+    "finished_at": {"type": ["string", "null"]},
+    "methods_used": {"type": "array"},
+    "numerics_config": {"type": "object"},
+    "code_commit": {"type": ["string", "null"]},
+    "env_hash": {"type": ["string", "null"]},
+    "input_data_hashes": {"type": "object"},
+    "report_path": {"type": ["string", "null"]},
+    "report_sha256": {"type": ["string", "null"]},
+    "artifacts": {"type": "array", "items": {"type": "string"}},
+    "side_findings": {"type": "array"},
+    "unblock_criterion": {"type": ["string", "null"]},
+    "criterion_mismatch_flag": {"type": "boolean"},
+    "theoretical_conflict": {"type": "boolean"},
+    "superseded_by": {"type": ["string", "null"]},
+    "notes": {"type": ["string", "null"]},
+    "version": {"type": "integer"}
+  }
+}

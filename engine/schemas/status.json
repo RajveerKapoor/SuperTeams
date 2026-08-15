@@ -1,0 +1,50 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "WAVE_<id>_STATUS.json — the heartbeat",
+  "description": "The most-polled file in the system. Written only by wave_status.py so field drift is a validation error, not silent rot. doctrine/03 section 4.",
+  "type": "object",
+  "required": [
+    "wave_id",
+    "state",
+    "tasks_total",
+    "tasks_done",
+    "artifacts_at_start",
+    "artifacts_now",
+    "audit_state"
+  ],
+  "properties": {
+    "wave_id": {"type": "string"},
+    "state": {
+      "type": "string",
+      "enum": [
+        "PLANNED",
+        "RUNNING",
+        "HALTED",
+        "INTERRUPTED",
+        "AWAITING_BACKGROUND_COMPUTE",
+        "AUDITING",
+        "COMPLETE",
+        "FAILED"
+      ]
+    },
+    "wavegen_session": {"type": ["string", "null"]},
+    "wavegen_pid_hint": {"type": ["integer", "null"]},
+    "tasks_total": {"type": "integer"},
+    "tasks_done": {"type": "integer"},
+    "task_in_progress": {"type": ["string", "null"]},
+    "tasks_pending": {"type": "array", "items": {"type": "string"}},
+    "artifacts_at_start": {"type": "integer"},
+    "artifacts_now": {"type": "integer"},
+    "last_checkpoint_at": {"type": ["string", "null"]},
+    "audit_state": {
+      "type": "string",
+      "enum": ["NOT_REQUESTED", "REQUESTED", "PASS", "FAIL", "PASS_WITH_NOTES"]
+    },
+    "deferred_compute": {"type": "array"},
+    "summary_path": {"type": ["string", "null"]},
+    "final_audit_at": {"type": ["string", "null"]},
+    "started_at": {"type": ["string", "null"]},
+    "updated_at": {"type": ["string", "null"]},
+    "next_action": {"type": ["string", "null"]}
+  }
+}
