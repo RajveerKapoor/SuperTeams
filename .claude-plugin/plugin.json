@@ -1,0 +1,17 @@
+{
+  "name": "superteam",
+  "version": "0.1.0",
+  "description": "Point Claude Code at a goal and it runs an autonomous, self-verifying agent campaign for days to weeks — planning, dispatching, banking results to disk, auditing itself, recovering from interruptions, and interrupting you only for genuine decisions.",
+  "author": {
+    "name": "Rajveer"
+  },
+  "keywords": [
+    "autonomous",
+    "orchestration",
+    "agents",
+    "campaign",
+    "multi-agent",
+    "long-running",
+    "verification"
+  ]
+}
