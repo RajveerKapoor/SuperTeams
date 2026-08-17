@@ -1,7 +1,7 @@
 # SuperTeam
 
 Point Claude Code at a goal and it runs an **autonomous, self-verifying multi-agent
-campaign** with **persistent & planned** agents, right in your IDE
+campaign** with **persistent & planned** agents, right in your IDE, with a **208** agent tested campaign over 10 weeks as the foundation of this build.
 
 Planning, dispatching work across many sessions, banking every result
 to disk, auditing its own claims, **recovering from interruptions and rate limits**,
